@@ -74,6 +74,7 @@ class Pessoas {
     }
     ListaTabela() {
         let tbody = document.getElementById('tbody');
+        tbody.innerText = '';
        for (let i = 0; i < this.arrayPessoas.length; i++) { // percorre o tbody e pega as informações
         let tr = tbody.insertRow(); // cria uma nova linha dentro da tabela
        
@@ -87,11 +88,12 @@ class Pessoas {
 
        td_CPF.innerText = this.arrayPessoas[i].CPF;
        td_Nome.innerText = this.arrayPessoas[i].nome;
-       td_Sobrenome.innerText = this.arrayPessoas[i].Sobrenome;
        td_DataDeNascimento.innerText = this.arrayPessoas[i].data;
        td_Idade.innerText = this.arrayPessoas[i].idade;
        td_ÉMaiorDeIdade.innerText = this.arrayPessoas[i].exampleRadios1;
        td_Vaga.innerText = this.arrayPessoas[i].vaga;
+
+       
       }
     }
 }
