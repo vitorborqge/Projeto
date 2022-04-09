@@ -3,6 +3,8 @@ class Pessoas {
     salvar(){
         alert('Cadastrado com Sucesso');
         /// ...
+        let pessoas = this.FuncaoPrincipal();
+        console.log(pessoas)
       }
        FuncaoPrincipal() { // função pra criar o json
         let pessoas = {}
@@ -34,9 +36,6 @@ class Pessoas {
             this.adicionar(pessoas);
         }
         console.log(this.arrayPessoas);
-    
-        
-        console.log(Pessoas);
         }
         
         adicionar(pessoas) { //função que pega o array de pessoas
@@ -83,6 +82,6 @@ class Pessoas {
     }
     }
     
-         
+    var pessoas = new Pessoas();
 
   
