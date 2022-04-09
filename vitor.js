@@ -2,10 +2,10 @@ class Pessoas {
 
     salvar(){
         let pessoas = this.FuncaoPrincipal();
-        if(this.validaCampos(pessoas)) { // função que valida os campos
-            alert('Salvo com sucesso seu cadastro')
-        }
-        console.log(pessoas);
+       if(this.ValidaCampos(pessoas)) {
+           this.adicionar(pessoas)
+       }
+        this.ListaTabela();
 
       }
        FuncaoPrincipal() { // função pra criar o json
@@ -35,7 +35,7 @@ class Pessoas {
         }
     
     
-        validaCampos(pessoas){   // função que da uma olhada se os campos estão corretos ai da um alerta
+        ValidaCampos(pessoas){   // função que da uma olhada se os campos estão corretos ai da um alerta
         
         let msg = '';
         
@@ -72,7 +72,29 @@ class Pessoas {
     
         return true;
     }
+    ListaTabela() {
+        let tbody = document.getElementById('tbody');
+       for (let i = 0; i < this.arrayPessoas.length; i++) { // percorre o tbody e pega as informações
+        let tr = tbody.insertRow(); // cria uma nova linha dentro da tabela
+       
+       let td_CPF = tr.insertCell(); // cria uma nova coluna ao tr
+       let td_Nome = tr.insertCell();
+       let td_Sobrenome = tr.insertCell();
+       let td_DataDeNascimento = tr.insertCell();
+       let td_Idade = tr.insertCell();
+       let td_ÉMaiorDeIdade = tr.insertCell();
+       let td_Vaga = tr.insertCell();
+
+       td_CPF.innerText = this.arrayPessoas[i].CPF;
+       td_Nome.innerText = this.arrayPessoas[i].nome;
+       td_Sobrenome.innerText = this.arrayPessoas[i].Sobrenome;
+       td_DataDeNascimento.innerText = this.arrayPessoas[i].data;
+       td_Idade.innerText = this.arrayPessoas[i].idade;
+       td_ÉMaiorDeIdade.innerText = this.arrayPessoas[i].exampleRadios1;
+       td_Vaga.innerText = this.arrayPessoas[i].vaga;
+      }
     }
+}
     
     var pessoas = new Pessoas();
 
