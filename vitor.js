@@ -1,10 +1,12 @@
 class Pessoas {
 
     salvar(){
-        alert('Cadastrado com Sucesso');
-        /// ...
         let pessoas = this.FuncaoPrincipal();
-        console.log(pessoas)
+        if(this.validaCampos(pessoas)) { // função que valida os campos
+            alert('Salvo com sucesso seu cadastro')
+        }
+        console.log(pessoas);
+
       }
        FuncaoPrincipal() { // função pra criar o json
         let pessoas = {}
@@ -26,25 +28,14 @@ class Pessoas {
             this.arrayPessoas = [];
             }
     
-    CliqueAqui(pessoas){
-        let Pessoa = this.function();
-        
-        if(this.validaCampos(pessoas) == true) { // função que da uma olhada se os campos estão corretos ai da um alerta
-            alert('salvar')
-        }
-        if(this.validaCampos(pessoas)) {
-            this.adicionar(pessoas);
-        }
-        console.log(this.arrayPessoas);
-        }
-        
+
         adicionar(pessoas) { //função que pega o array de pessoas
-            this.arrayPessoas.push(Pessoas);
+            this.arrayPessoas.push(pessoas);
             this.id++;
         }
     
     
-        validaCampos(pessoas){   // função que valida os campos
+        validaCampos(pessoas){   // função que da uma olhada se os campos estão corretos ai da um alerta
         
         let msg = '';
         
@@ -79,6 +70,7 @@ class Pessoas {
     
         }
     
+        return true;
     }
     }
     
