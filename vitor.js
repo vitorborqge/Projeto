@@ -86,16 +86,18 @@ class Pessoas {
        let td_ÉMaiorDeIdade = tr.insertCell();
        let td_Vaga = tr.insertCell();
 
-       td_CPF.innerText = this.arrayPessoas[i].CPF;
+       td_CPF.innerText = this.arrayPessoas[i].CPF; // a tabela pega a informação através do id de cada dado
        td_Nome.innerText = this.arrayPessoas[i].nome;
        td_DataDeNascimento.innerText = this.arrayPessoas[i].data;
        td_Idade.innerText = this.arrayPessoas[i].idade;
-       td_ÉMaiorDeIdade.innerText = this.arrayPessoas[i].exampleRadios1;
+       td_ÉMaiorDeIdade.innerText = this.arrayPessoas[i].exampleRadios2;
        td_Vaga.innerText = this.arrayPessoas[i].vaga;
 
        
       }
     }
+   
+
 }
     
     var pessoas = new Pessoas();
