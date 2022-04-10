@@ -96,10 +96,8 @@ class Pessoas {
        
       }
     }
-   
-
 }
     
     var pessoas = new Pessoas();
 
-  
+    
